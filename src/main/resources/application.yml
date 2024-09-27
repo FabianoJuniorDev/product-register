@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: nome-da-aplicacao
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/rest_spring?useTimezone=true&serverTimezone=UTC
+    username: ${DB_USERNAME:root} # Use variável de ambiente para segurança
+    password: ${DB_PASSWORD:Junior123@} # Use variável de ambiente para segurança
+  jpa:
+    hibernate:
+      ddl-auto: update # Considere 'validate' ou 'none' em produção
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true # Ative para depuração, mas desative em produção
+
+server:
+  port: 9095
